@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+
+
+    
+</head>
+<body>
+    <header></header>
+    <main class="container">
+        <h1>Cargar Pelicula</h1>
+        <form id="formularioDePeliculas" class="form-control">
+            <fieldset>
+                <label for="tituloPelicula">Titulo</label>
+                <input type="text" id="tituloPelicula">
+                <div class="invalid-feedback">Ingrese un nombre valido</div>
+            </fieldset>
+            <fieldset>
+                <label for="tipoPelicula">Tipo Pelicula</label>
+                <select name="" id="tipoPelicula">
+                    <option value="Pelicula">Pelicula</option>
+                    <option value="Serie">Serie</option>
+                    <div class="invalid-feedback">Ingrese un nombre valido</div>
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="caratulaPelicula">Caratula de la pelicula</label>
+                <input type="text" id="caratulaPelicula">
+                <div class="invalid-feedback">Ingrese un nombre valido</div>
+            </fieldset>
+            <fieldset>
+                <label for="categoriaPelicula">Categoria</label>
+                <select id="categoriaPelicula">
+                    <option value=""></option>
+                    <option value="terror">Terror</option>
+                    <option value="comedia">Comedia</option>
+                    <option value="accion">Accion</option>
+                    <div class="invalid-feedback">Ingrese un nombre valido</div>
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="descripcionPelicula">Descripcion</label>
+                <input type="text" id="descripcionPelicula">
+                <div class="invalid-feedback">Ingrese un nombre valido</div>
+            </fieldset>
+            <button type="submit">Cargar Pelicula</button>
+        </form>
+
+        <section class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Titulo</th>
+                        <th>Tipo</th>
+                        <th>Caratula</th>
+                        <th>Categoria</th>
+                        <th>Descripcion</th>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+    </main>
+    <footer></footer>
+
+
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"
+  ></script>
+    <script type="module" src="../javaScript/admin/app.js"></script>
+</body>
+</html>
