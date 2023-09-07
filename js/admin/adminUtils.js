@@ -41,6 +41,35 @@ export const filaDeCatalogoDePeliculas = (pelicula, indice) => {
   tdDescripcion.innerText = pelicula.descripcion;
   tr.appendChild(tdDescripcion);
 
+  const tdBotones = document.createElement('td')
+
+  const btnEditar = document.createElement('button');
+  const btnEliminar = document.createElement('button');
+  const btnDestacar = document.createElement('button');
+
+  btnEditar.type = 'button';
+  btnEliminar.type = 'button';
+  btnDestacar.type = 'button'
+  btnEditar.classList.add('btn', 'btn-warning', 'btn-sm', 'me-2');
+  btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm');
+  btnDestacar.classList.add('btn', 'btn-success')
+  btnEditar.innerText = 'Editar';
+  btnEliminar.innerText = 'Eliminar';
+  btnDestacar.innerText = 'Destacar'
+
+  btnEditar.onclick = () => {
+    prepararEdicionContacto(contacto.codigo);
+  };
+
+  btnEliminar.onclick = () => {
+    eliminarContacto(contacto.codigo);
+  };
+
+tdBotones.appendChild(btnEditar)
+tdBotones.appendChild(btnEliminar)
+tdBotones.appendChild(btnDestacar)
+tr.appendChild(tdBotones);
+
   tbody.appendChild(tr);
 };
 
