@@ -42,20 +42,26 @@ export const filaDeCatalogoDePeliculas = (pelicula, indice) => {
   tr.appendChild(tdDescripcion);
 
   const tdBotones = document.createElement('td')
-
   const btnEditar = document.createElement('button');
   const btnEliminar = document.createElement('button');
   const btnDestacar = document.createElement('button');
 
+  const iconEditar = document.createElement('i')
+  const iconEliminar = document.createElement('i')
+  const iconoDescatar = document.createElement('i')
+  iconEditar.classList.add('fa-solid', 'fa-pencil');
+  iconEliminar.classList.add('fa-solid', 'fa-trash-can')
+  iconoDescatar.classList.add('bi', 'bi-star-fill')
+
   btnEditar.type = 'button';
   btnEliminar.type = 'button';
   btnDestacar.type = 'button'
-  btnEditar.classList.add('btn', 'btn-warning', 'btn-sm', 'me-2');
-  btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm');
-  btnDestacar.classList.add('btn', 'btn-success')
-  btnEditar.innerText = 'Editar';
-  btnEliminar.innerText = 'Eliminar';
-  btnDestacar.innerText = 'Destacar'
+  btnEditar.classList.add('btn', 'btn-primary', 'btn-sm');
+btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm');
+  btnDestacar.classList.add( 'btn','btn-warning', 'btn-sm','btnDestacar')
+  btnEditar.appendChild(iconEditar);
+  btnEliminar.appendChild(iconEliminar);
+  btnDestacar.appendChild(iconoDescatar)
 
   btnEditar.onclick = () => {
     prepararEdicionContacto(contacto.codigo);

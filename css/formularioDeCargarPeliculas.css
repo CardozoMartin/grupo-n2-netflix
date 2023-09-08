@@ -1,0 +1,8 @@
+.imagen-tabla{
+    width: 100px;
+    height: 100px;
+}
+
+.btnDestacar i:hover{
+    color: #a1a1a1;
+}
