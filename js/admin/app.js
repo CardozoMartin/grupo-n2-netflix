@@ -1,6 +1,6 @@
 import { cargarPeliculas } from "./abm.js";
 import { cargarTabla } from "./adminUtils.js";
-import { validarCaratula, validarDescripcion, validarGenero, validarTipo, validarTitulo } from "./validacion.js";
+import { validarCaratula, validarDescripcion, validarCategoria, validarTipo, validarTitulo } from "./validacion.js";
 
 
 cargarTabla();
@@ -28,10 +28,10 @@ caratulaPelicula.addEventListener("blur", (e) => {
 
   validarCaratula(value, caratulaPelicula);
 });
-generoPelicula.addEventListener("blur", (e) => {
+categoriaPelicula.addEventListener("blur", (e) => {
   const value = e.target.value;
 
-  validarGenero(value, generoPelicula);
+  validarCategoria(value, generoPelicula);
 });
 descripcionPelicula.addEventListener("blur", (e) => {
   const value = e.target.value;

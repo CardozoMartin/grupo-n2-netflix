@@ -16,72 +16,154 @@
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
+
+    <link rel="stylesheet" href="../css/formularioDeCargarPeliculas.css">
+    <link rel="stylesheet" href="../css/footer.css">
   </head>
   <body>
     
-    <main class="container">
-      <h1>Cargar Pelicula</h1>
-      <form id="formularioDePeliculas" class="form-control">
-          <fieldset>
-              <label for="tituloPelicula">Titulo</label>
-              <input type="text" id="tituloPelicula">
-              <div class="invalid-feedback">Ingrese un nombre valido</div>
+    <main class="container text-center">
+<h1>Cargar Pelicula</h1>
+      <section>
+         <form class="row g-3 needs-validation text-white" novalidate id="formularioDePeliculas">
+        <fieldset class="col-md-4 position-relative">
+          <label for="tituloPelicula" class="form-label fw-bolder">Titulo Pelicula</label>
+          <input type="text" class="form-control" id="tituloPelicula" placeholder=" Ingrese el titulo de la pelicula" required>
+          <div class="valid-tooltip">
+            Ingresaste un nombre invalido!
           </fieldset>
-          <fieldset>
-              <label for="tipoPelicula">Tipo Pelicula</label>
-              <select name="" id="tipoPelicula">
-                  <option value="Pelicula">Pelicula</option>
+        </div>
+        <fieldset class="col-md-4 position-relative">
+          <label for="caratulaPelicula" class="form-label fw-bolder">Caratula</label>
+          <input type="text" class="form-control" id="caratulaPelicula" placeholder="Ingresa la portada" required>
+          <div class="valid-tooltip">
+            Debes ingresar la Url de la portada!
+          </div>
+        </fieldset>
+        <fieldset class="col-md-3 position-relative">
+          <label for="tipoPelicula" class="form-label fw-bolder">Tipo</label>
+          <select class="form-select" id="tipoPelicula" required>
+            <option selected disabled value="">Elige el tipo</option>
+            <option value="Pelicula">Pelicula</option>
                   <option value="Serie">Serie</option>
-                  <div class="invalid-feedback">Ingrese un nombre valido</div>
-              </select>
-          </fieldset>
-          <fieldset>
-              <label for="caratulaPelicula">Caratula de la pelicula</label>
-              <input type="text" id="caratulaPelicula">
-              <div class="invalid-feedback">Ingrese un nombre valido</div>
-          </fieldset>
-          <fieldset>
-              <label for="categoriaPelicula">Categoria</label>
-              <select id="categoriaPelicula">
-                  <option value=""></option>
-                  <option value="terror">Terror</option>
+          </select>
+          <div class="invalid-tooltip">
+            Please select a valid state.
+          </div>
+        </fieldset>
+        </div>
+        <fieldset class="col-md-6 position-relative">
+          <label for="categoriaPelicula" class="form-label fw-bolder">Categoria</label>
+          <select class="form-select" id="categoriaPelicula" required>
+            <option selected disabled value="">Elige la categoria</option>
+            <option value="Terror">Terror</option>
+                  <option value="Drama">Drama</option>
+                  <option value="Ciencia">Ciencia Ficcion</option>
+                  <option value="Infantil">Infantil</option>
+                  <option value="Suspenso">Suspenso</option>
                   <option value="comedia">Comedia</option>
                   <option value="accion">Accion</option>
-                  <div class="invalid-feedback">Ingrese un nombre valido</div>
-              </select>
-          </fieldset>
-          <fieldset>
-              <label for="descripcionPelicula">Descripcion</label>
-              <input type="text" id="descripcionPelicula">
-              <div class="invalid-feedback">Ingrese un nombre valido</div>
-          </fieldset>
-          <button type="submit">Cargar Pelicula</button>
+          </select>
+          <div class="invalid-tooltip">
+            Debes elegir una categoria!
+          </div>
+        </fieldset>
+        <div class="col-md-3 position-relative">
+          <label for="descripcionPelicula" class="form-label fw-bolder">Descripcion</label>
+          <input type="text" class="form-control" id="descripcionPelicula" required>
+          <div class="invalid-tooltip">
+            Please provide a valid zip.
+          </div>
+        </div>
+        <div class="col-12 mt-5">
+          <button class="btn btn-primary" type="submit">Cargar Pelicula</button>
+        </div>
       </form>
+      </section>
+      
+     
+      
 
-      <section class="container">
-          <table class="table">
-              <thead>
+      <section class="container row mt-5">
+        <article class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+<table class="table-dark table table-hover ">
+              <thead class="text-white">
                   <tr>
                       <th>Id</th>
-                      <th>Titulo</th>
-                      <th>Tipo</th>
                       <th>Caratula</th>
+                      <th>Titulo</th>
                       <th>Categoria</th>
-                      <th>Descripcion</th>
+                      <th>Tipo</th>
+                      <th>Acciones</th>
                   </tr>
               </thead>
               <tbody id="tbodyPeliculas"></tbody>
           </table>
+        </article>
+          
       </section>
   </main>
-    
-    <script type="module" src="./js/admin/app.js"></script>
+  <footer>
+    <section class="container">
+    <ul class="contenedor__redes">
+      <li class="d-inline">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i
+        ></a>
+      </li>
+      <li class="d-inline">
+        <a href="#"><i class="fa-brands fa-instagram"></i></i
+        ></a>
+      </li>
+      <li class="d-inline">
+        <a href="#"><i class="fa-brands fa-twitter"></i
+        ></a>
+      </li>
+      <li class="d-inline">
+        <a href="#"><i class="fa-brands fa-youtube"></i
+        ></a>
+      </li> </ul>
+      <div class="div__footer">
+    <ul>
+      <li class="li__footer li__footer"><a href="#">Audio descriptivo</li></a>
+      <li class="li__footer li__footer"><a href="#">Relaciones con inversionistas</li></a>
+      <li class="li__footer li__footer"><a href="#">Avisos legales</li></a>
+    </ul>
+    <ul>
+      <li class="li__footer li__footer"><a href="#">Centro de ayuda</li></a>
+      <li class="li__footer li__footer"><a href="#">Empleo</li></a>
+      <li class="li__footer li__footer"><a href="#">Preferencias de cookies</li></a>
+    </ul>
+    <ul>
+      <li class="li__footer li__footer"><a href="#">Tarjeta de regalo</li></a>
+      <li class="li__footer li__footer"><a href="#">Términos de uso</li></a>
+      <li class="li__footer li__footer"><a href="#">Información corporativa</li></a>
+    </ul>
+    <ul>
+      <li class="li__footer li__footer"><a href="#">Prensa</li></a>
+      <li class="li__footer li__footer"><a href="#">Privacidad</li></a>
+      <li class="li__footer li__footer"><a href="#">Contactanos</li></a>
+    </ul>
+  </div>
+  
+    <a class="codigo__servicios ms-4" href="#">Codigo de servicio</a>
+    <p class="mt-4 ms-4">© 1997-2023 Netflix, Inc.</p></section>
+
+  </footer>
+    <script type="module" src="../js/admin/app.js"></script>
     
   </body>
 </html>

@@ -1,5 +1,5 @@
 export const validarTitulo = (value, campo) => {
-    if (value.trim().length <= 4) {
+    if (value.trim().length <= 3) {
         campo.classList.add('is-invalid');
         campo.classList.remove('is-valid');
         return false;
@@ -34,7 +34,7 @@ export const validarCaratula = (value, campo) => {
     return true;
 }
 
-export const validarGenero = (value, campo) => {
+export const validarCategoria = (value, campo) => {
     if (value === "") {
         campo.classList.add('is-invalid');
         campo.classList.remove('is-valid');
