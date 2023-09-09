@@ -1,4 +1,5 @@
 import { obtenerPeliculas } from "../utils.js";
+import { eliminarPelicula } from "./abm.js";
 
 
 export const guardarPelicula = (pelicula) => {
@@ -68,7 +69,7 @@ btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm');
   };
 
   btnEliminar.onclick = () => {
-    eliminarContacto(contacto.codigo);
+ eliminarPelicula(pelicula.codigo)
   };
 
 tdBotones.appendChild(btnEditar)
