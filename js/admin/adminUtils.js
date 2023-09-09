@@ -38,6 +38,7 @@ export const filaDeCatalogoDePeliculas = (pelicula, indice) => {
   tr.appendChild(tdTipo);
 
   const tdDescripcion = document.createElement("td");
+  tdDescripcion.classList.add('text-wrap')
   tdDescripcion.innerText = pelicula.descripcion;
   tr.appendChild(tdDescripcion);
 
