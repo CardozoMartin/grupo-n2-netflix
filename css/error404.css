@@ -1,0 +1,34 @@
+
+body{
+    background-color:#7662a9;
+}
+
+.contenedor__error{
+    background-color: #7662a9;
+   display:flex ;
+   flex-direction: column;
+   justify-content:center;
+   align-items: center;
+   height: 100vh;
+
+}
+
+img{
+    width: 500px;
+    height: auto;
+}
+.btn__error{
+    background-color: #b6b6b6;
+    padding: 13px;
+    text-decoration: none;
+  
+    border: 2px solid #eeeeee;
+    border-radius: 10px;
+    &:hover{
+        background-color: #9b9b9b;
+    }
+}
+.btn__error a{
+    text-decoration: none;
+    color: #494949;
+}
