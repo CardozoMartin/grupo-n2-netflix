@@ -1,5 +1,5 @@
 import { cargarPeliculas } from "./abm.js";
-import { cargarTabla } from "./adminUtils.js";
+import { cargarTabla, filtroBuscarPelicula } from "./adminUtils.js";
 import { validarCaratula, validarDescripcion, validarCategoria, validarTipo, validarTitulo } from "./validacion.js";
 
 
@@ -11,6 +11,7 @@ const caratulaPelicula = document.getElementById("caratulaPelicula");
 const generoPelicula = document.getElementById("categoriaPelicula");
 const descripcionPelicula = document.getElementById("descripcionPelicula");
 const formularioDePeliculas = document.getElementById("formularioDePeliculas");
+const buscarPelicula = document.getElementById("buscarPelicula")
 
 tituloPelicula.addEventListener("blur", (e) => {
   const value = e.target.value;
@@ -69,3 +70,5 @@ cargarTabla()
   descripcionPelicula.classList.remove('is-valid', 'is-invalid')
   
 });
+
+buscarPelicula.addEventListener("input",filtroBuscarPelicula)
