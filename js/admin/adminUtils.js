@@ -1,5 +1,5 @@
 import { obtenerPeliculas } from "../utils.js";
-import { eliminarPelicula } from "./abm.js";
+import { editarUnaPelicula, eliminarPelicula } from "./abm.js";
 
 
 export const guardarPelicula = (pelicula) => {
@@ -59,7 +59,7 @@ export const filaDeCatalogoDePeliculas = (pelicula, indice) => {
   btnEliminar.type = 'button';
   btnDestacar.type = 'button'
   btnEditar.classList.add('btn', 'btn-primary', 'btn-sm');
-btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm');
+  btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm');
   btnDestacar.classList.add( 'btn','btn-warning', 'btn-sm','btnDestacar')
   btnEditar.appendChild(iconEditar);
   btnEliminar.appendChild(iconEliminar);
@@ -67,6 +67,7 @@ btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm');
 
   btnEditar.onclick = () => {
     
+    EdicionDePelicula(pelicula.codigo); 
   };
 
   btnEliminar.onclick = () => {
@@ -91,6 +92,3 @@ export const cargarTabla = (pelicula) => {
     filaDeCatalogoDePeliculas(pelicula, indice + 1); 
   });
 };
-
-
-

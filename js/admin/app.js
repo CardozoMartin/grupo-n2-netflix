@@ -1,5 +1,5 @@
-import { cargarPeliculas } from "./abm.js";
-import { cargarTabla } from "./adminUtils.js";
+import { cargarPeliculas, editarUnaPelicula } from "./abm.js";
+import { PeliculaEditando, cargarTabla, filtroBuscarPelicula } from "./adminUtils.js";
 import { validarCaratula, validarDescripcion, validarCategoria, validarTipo, validarTitulo } from "./validacion.js";
 
 
@@ -11,6 +11,7 @@ const caratulaPelicula = document.getElementById("caratulaPelicula");
 const generoPelicula = document.getElementById("categoriaPelicula");
 const descripcionPelicula = document.getElementById("descripcionPelicula");
 const formularioDePeliculas = document.getElementById("formularioDePeliculas");
+const buscarPelicula = document.getElementById("buscarPelicula")
 
 tituloPelicula.addEventListener("blur", (e) => {
   const value = e.target.value;
@@ -53,14 +54,15 @@ formularioDePeliculas.addEventListener("submit", (e) => {
     validarCaratula(caratula, caratulaPelicula) &&
     validarDescripcion(descripcion, descripcionPelicula)
   ) {
-    cargarPeliculas(titulo,tipo,caratula,genero,descripcion)
-cargarTabla()
+    if(PeliculaEditando()){
+      editarUnaPelicula(titulo,tipo,caratula,genero,descripcion);
+    }else{
+      cargarPeliculas(titulo,tipo,caratula,genero,descripcion)
+    } cargarTabla()
   formularioDePeliculas.reset();
 
   }
 
-
-  
 
   tituloPelicula.classList.remove('is-valid', 'is-invalid');
   tipoPelicula.classList.remove('is-valid', 'is-invalid');
@@ -69,3 +71,5 @@ cargarTabla()
   descripcionPelicula.classList.remove('is-valid', 'is-invalid')
   
 });
+
+buscarPelicula.addEventListener("input",filtroBuscarPelicula)
