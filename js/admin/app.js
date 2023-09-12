@@ -1,5 +1,5 @@
-import { cargarPeliculas } from "./abm.js";
-import { cargarTabla, filtroBuscarPelicula } from "./adminUtils.js";
+import { cargarPeliculas, editarUnaPelicula } from "./abm.js";
+import { PeliculaEditando, cargarTabla, filtroBuscarPelicula } from "./adminUtils.js";
 import { validarCaratula, validarDescripcion, validarCategoria, validarTipo, validarTitulo } from "./validacion.js";
 
 
@@ -54,14 +54,15 @@ formularioDePeliculas.addEventListener("submit", (e) => {
     validarCaratula(caratula, caratulaPelicula) &&
     validarDescripcion(descripcion, descripcionPelicula)
   ) {
-    cargarPeliculas(titulo,tipo,caratula,genero,descripcion)
-cargarTabla()
+    if(PeliculaEditando()){
+      editarUnaPelicula(titulo,tipo,caratula,genero,descripcion);
+    }else{
+      cargarPeliculas(titulo,tipo,caratula,genero,descripcion)
+    } cargarTabla()
   formularioDePeliculas.reset();
 
   }
 
-
-  
 
   tituloPelicula.classList.remove('is-valid', 'is-invalid');
   tipoPelicula.classList.remove('is-valid', 'is-invalid');

@@ -59,14 +59,14 @@ export const filaDeCatalogoDePeliculas = (pelicula, indice) => {
   btnEliminar.type = 'button';
   btnDestacar.type = 'button'
   btnEditar.classList.add('btn', 'btn-primary', 'btn-sm');
-btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm');
+  btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm');
   btnDestacar.classList.add( 'btn','btn-warning', 'btn-sm','btnDestacar')
   btnEditar.appendChild(iconEditar);
   btnEliminar.appendChild(iconEliminar);
   btnDestacar.appendChild(iconoDescatar)
 
   btnEditar.onclick = () => {
-    prepararEdicionContacto(contacto.codigo);
+    EdicionDePelicula(pelicula.codigo); 
   };
 
   btnEliminar.onclick = () => {
@@ -106,4 +106,41 @@ buscarPelicula.addEventListener("input",() => {
   tbody.innerHTML = "";
   resultado.forEach((item, indice) => {filaDeCatalogoDePeliculas(item, indice)})
 })}
+ 
+export const EdicionDePelicula = (codigo)=>{
+  // 1. Traer lista
+  const peliculas = obtenerPeliculas();
+
+  // 2. Buscar la pelicula a editar
+  const peliculaSeleccionada = peliculas.find(item => item.codigo === codigo);
+
+  // 3. Seleccionar los elementos (campos)
+  const tituloPelicula = document.getElementById("tituloPelicula");
+  const tipoPelicula = document.getElementById("tipoPelicula");
+  const caratulaPelicula = document.getElementById("caratulaPelicula");
+  const generoPelicula = document.getElementById("categoriaPelicula");
+  const descripcionPelicula = document.getElementById("descripcionPelicula");
+
+  // 4. Cargar los datos en el formulario
+
+  tituloPelicula.value = peliculaSeleccionada.titulo;
+  tipoPelicula.value = peliculaSeleccionada.tipo;
+  caratulaPelicula.value = peliculaSeleccionada.caratula;
+  generoPelicula.value = peliculaSeleccionada.genero;
+  descripcionPelicula.value = peliculaSeleccionada.descripcion;
+
+  // 5. Guardar codigo
+  sessionStorage.setItem('idPelicula',codigo);
+
+}
+
+export const PeliculaEditando = ()=>{
+  const codigo = sessionStorage.getItem('idPelicula');
+
+  if(codigo === null){
+    return false;
+  }else {
+    return true;
+  }
+} 
  

@@ -49,4 +49,55 @@ export const eliminarPelicula = (codigo)=>{
   })
 }
 
+export const editarUnaPelicula =(titulo,tipo, caratula,genero,descripcion)=>{
+  // 1. Traer lista de peliculas y el codigo de la pelicula a editar
+  const codigo = sessionStorage.getItem('idPelicula');
+  const peliculas = obtenerPeliculas();
 
+  // # Si no hay codigo (es null)
+  if(!codigo){
+    
+swal.fire
+({
+      title: 'Error',
+      text: 'No se encontró la Pelicula',
+      icon: 'error',
+    });
+    return;
+  }
+  const posicionDeLaPelicula = peliculas.findIndex(
+    (item) => item.codigo === codigo
+  );
+  // 2. Buscar posicion de la pelicula
+
+  if(posicionDeLaPelicula === -1){
+    
+swal.fire
+({
+      title: 'Error',
+      text: 'No se encontró la pelicula',
+      icon: 'error',
+    });
+    return;
+  }
+
+  // 3. Crear el pelicula editado
+  const peliculaEditada = new Pelicula(titulo,tipo, caratula,genero,descripcion);
+
+  // 4. Eliminar pelicula anterior y agregar el nuevo
+  peliculas.splice(posicionDeLaPelicula,1,peliculaEditada);
+
+  // 5. Guardar en LS
+  localStorage.setItem('peliculas',JSON.stringify(peliculas));
+
+  // 6. Mostrar mensaje de exito
+  
+swal.fire
+({
+    title: 'Exito',
+    text: 'El contacto se modificó correctamente',
+    icon: 'success',
+  });
+  // 7. Resetear estado previo a edicion
+  sessionStorage.removeItem('idPelicula');
+ } 

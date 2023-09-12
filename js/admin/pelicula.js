@@ -9,3 +9,4 @@ export class Pelicula{
          //this.estaPublicada = estaPublicada;
     }
 };
+
