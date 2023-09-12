@@ -66,7 +66,7 @@ btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm');
   btnDestacar.appendChild(iconoDescatar)
 
   btnEditar.onclick = () => {
-    prepararEdicionContacto(contacto.codigo);
+    
   };
 
   btnEliminar.onclick = () => {
@@ -81,7 +81,7 @@ tr.appendChild(tdBotones);
   tbody.appendChild(tr);
 };
 
-export const cargarTabla = () => {
+export const cargarTabla = (pelicula) => {
   const peliculas = obtenerPeliculas();
 
   const tbody = document.getElementById("tbodyPeliculas");
@@ -91,3 +91,6 @@ export const cargarTabla = () => {
     filaDeCatalogoDePeliculas(pelicula, indice + 1); 
   });
 };
+
+
+
