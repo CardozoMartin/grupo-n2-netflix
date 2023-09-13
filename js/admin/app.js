@@ -64,6 +64,8 @@ formularioDePeliculas.addEventListener("submit", (e) => {
   }
 
 
+  
+
   tituloPelicula.classList.remove('is-valid', 'is-invalid');
   tipoPelicula.classList.remove('is-valid', 'is-invalid');
   caratulaPelicula.classList.remove('is-valid', 'is-invalid');
