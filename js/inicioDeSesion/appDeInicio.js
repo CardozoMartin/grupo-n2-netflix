@@ -1,20 +1,20 @@
 
 
 
-//const verContraseña = document.getElementById('verContraseña');
+
 // Define 'contrasenia' aquí
 
 import { UserWithoutPassword, Usuario } from "./usuario.js";
 import { validacionContrasenia, validacionNombreUsuario } from "./validacionDeInicio.js";
-
-/*verContraseña.addEventListener('click', () => {
-    if (contrasenia.type === "password") {
-        contrasenia.type = "text";
+const verContraseña = document.getElementById('verContraseña');
+verContraseña.addEventListener('click', () => {
+    if (campoContraseña.type === "password") {
+        campoContraseña.type = "text";
     } else {
-        contrasenia.type = "password";
+        campoContraseña.type = "password";
     }
 });
-*/
+
 
 const estaLogueado = JSON.parse(sessionStorage.getItem('estaLogueado'));
 if (estaLogueado) {
