@@ -7,6 +7,7 @@ export class Pelicula{
          this.genero = genero;
          this.descripcion = descripcion;
          //this.estaPublicada = estaPublicada;
+         this.destacada = false;
     }
 };
 
