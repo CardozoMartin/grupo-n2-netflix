@@ -37,8 +37,8 @@ export const descatacarPelicula = (codigo) => {
     caratulaPelicula.src = pelicula.caratula;
     caratulaPelicula.alt = pelicula.titulo;
   
-    // Limpiar contenido anterior antes de agregar uno nuevo
-    caratulaPelDestacada.innerHTML = '';
+   
+    
   
     caratulaPelDestacada.appendChild(caratulaPelicula);
   

@@ -39,11 +39,7 @@ export const filaDeCatalogoDePeliculas = (pelicula, indice) => {
   tdTipo.innerText = pelicula.tipo;
   tr.appendChild(tdTipo);
 
-  const tdDescripcion = document.createElement("td");
-  tdDescripcion.classList.add('text-wrap')
-  tdDescripcion.innerText = pelicula.descripcion;
-  tr.appendChild(tdDescripcion);
-
+  
   const tdBotones = document.createElement('td')
   const btnEditar = document.createElement('button');
   const btnEliminar = document.createElement('button');

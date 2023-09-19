@@ -4,8 +4,8 @@ import { Pelicula } from "./pelicula.js";
 
 
 
-export const cargarPeliculas = (titulo,tipo, caratula,genero,descripcion)=>{
-  const nuevaPelicula = new Pelicula(titulo,tipo, caratula,genero,descripcion)
+export const cargarPeliculas = (titulo,tipo, caratula,genero,descripcion,trailer)=>{
+  const nuevaPelicula = new Pelicula(titulo,tipo, caratula,genero,descripcion,trailer)
 
   guardarPelicula(nuevaPelicula);
 }
@@ -49,7 +49,7 @@ export const eliminarPelicula = (codigo)=>{
   })
 }
 
-export const editarUnaPelicula =(titulo,tipo, caratula,genero,descripcion)=>{
+export const editarUnaPelicula =(titulo,tipo, caratula,genero,descripcion,trailer)=>{
   // 1. Traer lista de peliculas y el codigo de la pelicula a editar
   const codigo = sessionStorage.getItem('idPelicula');
   const peliculas = obtenerPeliculas();
@@ -82,7 +82,7 @@ swal.fire
   }
 
   // 3. Crear el pelicula editado
-  const peliculaEditada = new Pelicula(titulo,tipo, caratula,genero,descripcion);
+  const peliculaEditada = new Pelicula(titulo,tipo, caratula,genero,descripcion,trailer);
 
   // 4. Eliminar pelicula anterior y agregar el nuevo
   peliculas.splice(posicionDeLaPelicula,1,peliculaEditada);
