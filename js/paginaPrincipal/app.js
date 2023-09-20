@@ -47,3 +47,40 @@ const pelicula = obtenerPeliculas();
 pelicula.forEach(element => {
     crearTarjetasDeSlider(element)
 });
+
+
+const buscarPorCategoria = document.getElementById('buscarPorCategoria')
+buscarPorCategoria.addEventListener('input',()=>{
+  const catalogoPeliculas = document.getElementById('contenedor')
+  const categoriaElegida = buscarPorCategoria.value;
+  const peliculas = obtenerPeliculas();
+
+  const categoriaAMostrar = peliculas.filter((item)=>{
+      return item.genero.includes(categoriaElegida);
+  })
+
+  catalogoPeliculas.innerHTML = "";
+
+  setTimeout(categoriaAMostrar.forEach((item)=>{
+    crearTarjetasDeSlider(item)
+  }))
+  
+
+}) 
+
+const buscarPelicula = document.getElementById('buscarPelicula');
+
+buscarPelicula.addEventListener('input',()=>{
+  const catalogoPeliculas = document.getElementById('contenedor')
+const nombreDeLaPelicula = buscarPelicula.value.toLowerCase();
+const peliculas = obtenerPeliculas();
+const peliculaEncontrada = peliculas.filter((item)=>{
+ return item.titulo.toLowerCase().includes(nombreDeLaPelicula);
+})
+catalogoPeliculas.innerHTML = "";
+
+peliculaEncontrada.forEach((item)=>{
+  crearTarjetasDeSlider(item);
+})
+
+})

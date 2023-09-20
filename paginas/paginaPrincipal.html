@@ -5,11 +5,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
-
+    <!--Librerias-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <!--Css-->
-    <link rel="stylesheet" href="../css/paginaPrincipal.css">
+    
     <link rel="stylesheet" href="../css/peliculaDestacada.css">
+    <link rel="stylesheet" href="../css/paginaPrincipal.css">
 </head>
 
 <body>
@@ -46,6 +53,32 @@
             </article>
         </section>
 
+        <section class="container pb-5 d-flex">
+            <article class="mx-auto">
+                <form class="form mx-auto">
+                    <label for="search">
+                        <input class="input" type="text" required="" placeholder="Ingrese el titulo" id="buscarPelicula">
+                        <div class="fancy-bg"></div>
+                        
+                       
+                    </label>
+                </form>
+            </article>
+            <select class="form-select w-25 bg-dark text-white"id="buscarPorCategoria" name="categoriaPeliculas" aria-label="Default select example">
+                <option value="" disabled selected>Categoria</option>
+                    <option value="Anime">Anime</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Accion">Accion</option>
+                    <option value="Infantil">infantil</option>
+                    <option value="Ciencia ficcion">ciencia ficcion</option>
+                    <option value="Comedia">comedia</option>
+                    <option value="Drama">drama</option>
+                    <option value="Romantica">romantica</option>
+              </select>
+            <article>
+
+            </article>
+        </section>
         <section class="top-rated">
             <div class="container">
                 <ul class="movies-list" id="contenedor"></ul>
@@ -55,6 +88,7 @@
 
     <!--JavaScript-->
     <script type="module" src="../js/paginaPrincipal/app.js"></script>
+    <script type="module" src="../js/peliculaDestacada/app.js"></script>
 </body>
 
 </html>

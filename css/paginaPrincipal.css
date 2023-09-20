@@ -1,199 +1,313 @@
 :root {
-    --rich-black-fogra-29: hsl(225, 25%, 9%);
-    --rich-black-fogra-39: hsl(170, 21%, 5%);
-    --raisin-black: hsl(228, 13%, 15%);
-    --eerie-black: hsl(207, 19%, 11%);
-    --light-gray: hsl(0, 3%, 80%);
-    --gunmetal-1: hsl(229, 15%, 21%);
-    --gunmetal-2: hsl(216, 22%, 18%);
-    --gainsboro: hsl(0, 7%, 88%);
-    --citrine: hsl(57, 97%, 45%);
-    --xiketic: hsl(253, 21%, 13%);
-    --gray-x: hsl(0, 0%, 74%);
-    --white: hsl(0, 100%, 100%);
-    --black: hsl(0, 0%, 0%);
-    --jet: hsl(0, 0%, 20%);
+  --rich-black-fogra-29: hsl(225, 25%, 9%);
+  --rich-black-fogra-39: hsl(170, 21%, 5%);
+  --raisin-black: hsl(228, 13%, 15%);
+  --eerie-black: hsl(207, 19%, 11%);
+  --light-gray: hsl(0, 3%, 80%);
+  --gunmetal-1: hsl(229, 15%, 21%);
+  --gunmetal-2: hsl(216, 22%, 18%);
+  --gainsboro: hsl(0, 7%, 88%);
+  --citrine: hsl(57, 97%, 45%);
+  --xiketic: hsl(253, 21%, 13%);
+  --gray-x: hsl(0, 0%, 74%);
+  --white: hsl(0, 100%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --jet: hsl(0, 0%, 20%);
+
+  --ff-poppins: "Poppins", sans-serif;
+
+  --fs-1: 36px;
+  --fs-2: 32px;
+  --fs-3: 30px;
+  --fs-4: 24px;
+  --fs-5: 20px;
+  --fs-6: 18px;
+  --fs-7: 16px;
+  --fs-8: 15px;
+  --fs-9: 14px;
+  --fs-10: 13px;
+  --fs-11: 12px;
+  --fs-12: 11px;
+
+  --fw-500: 500;
+  --fw-700: 700;
+
+ 
+
+  --transition-1: 0.15s ease;
+  --transition-2: 0.25s ease-in;
+
+
+
+  --section-padding: 100px;
+
+   }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+  }
   
-    --ff-poppins: "Poppins", sans-serif;
-  
-    --fs-1: 36px;
-    --fs-2: 32px;
-    --fs-3: 30px;
-    --fs-4: 24px;
-    --fs-5: 20px;
-    --fs-6: 18px;
-    --fs-7: 16px;
-    --fs-8: 15px;
-    --fs-9: 14px;
-    --fs-10: 13px;
-    --fs-11: 12px;
-    --fs-12: 11px;
-  
-    --fw-500: 500;
-    --fw-700: 700;
-  
-   
-  
-    --transition-1: 0.15s ease;
-    --transition-2: 0.25s ease-in;
-  
-  
-  
-    --section-padding: 100px;
-  
-     }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Montserrat", sans-serif;
-    }
+  body {
     
-    body {
-      background-color: hsl(268, 94%, 6%);
-      width: 100%;
-      height: 100vh;
-    }
-    
-    body::after {
-      content: "";
-      position: absolute;
-      display: block;
-      background: linear-gradient(to top, #000000, #0000009d);
-      width: 100%;
-      height: 100vh;
-      top: 0;
-      z-index: -1;
-    }
-  
-  
-  .btn {
-    color: var(--white);
-  
-    font-weight: var(--fw-700);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 10px;
-    border: 2px solid var(--citrine);
-    border-radius: 50px;
-    transition: var(--transition-1);
-  }
-  
-  /**
-   * MOVIE CARD
-   */
-  
-  .movies-list {
-    display: grid;
-    gap: 50px;
-  }
-  
-  .movie-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .movie-card .card-banner {
-    position: relative;
-    background: var(--gunmetal-1);
-    aspect-ratio: 2 / 3;
-    border-radius: 6px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    transition: var(--transition-1);
-  }
-  
-  .movie-card .card-banner::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    transition: var(--transition-1);
-  }
-  
-  .movie-card .card-banner:hover {
-    box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.5);
-  }
-  
-  .movie-card .card-banner:hover::after {
-    background: hsla(0, 0%, 100%, 0.05);
-  }
-  
-  .movie-card .card-banner img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background: linear-gradient( #11011f, #000000f3);
   }
   
-  .movie-card .title-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 10px;
+  body::after {
+    content: "";
+    position: absolute;
+    display: block;
+    
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
   }
-  
-  .movie-card .card-title:is(:hover, :focus) {
-    color: var(--citrine);
+
+
+.btn {
+  color: var(--white);
+
+  font-weight: var(--fw-700);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 10px;
+  border: 2px solid var(--citrine);
+  border-radius: 50px;
+  transition: var(--transition-1);
+}
+
+/**
+ * MOVIE CARD
+ */
+
+.movies-list {
+  display: grid;
+  gap: 50px;
+}
+li{
+  text-decoration: none;
+}
+.movie-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-card .card-banner {
+  position: relative;
+  background: var(--gunmetal-1);
+  aspect-ratio: 2 / 3;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: var(--transition-1);
+}
+
+.movie-card .card-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transition: var(--transition-1);
+}
+
+.movie-card .card-banner:hover {
+  box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.5);
+}
+
+.movie-card .card-banner:hover::after {
+  background: hsla(0, 0%, 100%, 0.05);
+}
+
+.movie-card .card-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-card .title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.movie-card .card-title:is(:hover, :focus) {
+  color: var(--citrine);
+}
+
+
+@media (min-width: 550px) {
+  :root {
+    --fs-1: 42px;
   }
-  
-  
-  @media (min-width: 550px) {
+
+  .container {
+    max-width: 540px;
+    margin-inline: auto;
+  }
+
+  /* MOVIE CARD */
+
+  .movies-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px 30px;
+  }
+
+  @media (min-width: 768px) {
     :root {
-      --fs-1: 42px;
+      --fs-2: 36px;
     }
-  
+
     .container {
-      max-width: 540px;
-      margin-inline: auto;
-    }
-  
-    /* MOVIE CARD */
-  
-    .movies-list {
-      grid-template-columns: 1fr 1fr;
-      gap: 60px 30px;
-    }
-  
-    @media (min-width: 768px) {
-      :root {
-        --fs-2: 36px;
-      }
-  
-      .container {
-        max-width: 720px;
-      }
-    }
-  
-    @media (min-width: 992px) {
-      .container {
-        max-width: 960px;
-      }
-  
-      /* MOVIE CARD */
-  
-      .movies-list {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-  
-    @media (min-width: 1200px) {
-      :root {
-        --fs-1: 60px;
-        --fs-4: 26px;
-      }
-  
-      .container {
-        max-width: 1320px;
-      }
-  
-      .movies-list {
-        grid-template-columns: repeat(4, 1fr);
-      }
+      max-width: 720px;
     }
   }
-  
+
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+
+    /* MOVIE CARD */
+
+    .movies-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* this is a recreation of twitter search in css */
+.form {
+--input-text-color: #fff;
+--input-bg-color: #283542;
+--focus-input-bg-color: transparent;
+--text-color: #949faa;
+--active-color: #1b9bee;
+--width-of-input: 200px;
+--inline-padding-of-input: 1.2em;
+--gap: 0.9rem;
+}
+/* form style */
+.form {
+font-size: 0.9rem;
+display: flex;
+gap: 0.5rem;
+align-items: center;
+width: var(--width-of-input);
+position: relative;
+isolation: isolate;
+}
+/* a fancy bg for showing background and border when focus. */
+.fancy-bg {
+position: absolute;
+width: 100%;
+inset: 0;
+background: var(--input-bg-color);
+border-radius: 30px;
+height: 100%;
+z-index: -1;
+pointer-events: none;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+/* label styling */
+label {
+width: 100%;
+padding: 0.8em;
+height: 40px;
+padding-inline: var(--inline-padding-of-input);
+display: flex;
+align-items: center;
+}
+
+.search,.close-btn {
+position: absolute;
+}
+/* styling search-icon */
+.search {
+fill: var(--text-color);
+left: var(--inline-padding-of-input);
+}
+/* svg -- size */
+svg {
+width: 17px;
+display: block;
+}
+/* styling of close button */
+.close-btn {
+border: none;
+right: var(--inline-padding-of-input);
+box-sizing: border-box;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #fff;
+padding: 0.1em;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: var(--active-color);
+opacity: 0;
+visibility: hidden;
+}
+/* styling of input */
+.input {
+color: var(--input-text-color);
+width: 100%;
+margin-inline: min(2em,calc(var(--inline-padding-of-input) + var(--gap)));
+background: none;
+border: none;
+}
+
+.input:focus {
+outline: none;
+}
+
+.input::placeholder {
+color: var(--text-color)
+}
+/* input background change in focus */
+.input:focus ~ .fancy-bg {
+border: 1px solid var(--active-color);
+background: var(--focus-input-bg-color);
+}
+/* search icon color change in focus */
+.input:focus ~ .search {
+fill: var(--active-color);
+}
+/* showing close button when typing */
+.input:valid ~ .close-btn {
+opacity: 1;
+visibility: visible;
+}
+/* this is for the default background in input,when selecting autofill options -- you can remove this code if you do not want to override the browser style.  */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+-webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+-webkit-transition-delay: 9999s;
+}
+
+  @media (min-width: 1200px) {
+    :root {
+      --fs-1: 60px;
+      --fs-4: 26px;
+    }
+
+    .container {
+      max-width: 1320px;
+    }
+
+    .movies-list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

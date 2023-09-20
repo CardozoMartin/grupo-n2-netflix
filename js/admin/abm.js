@@ -101,3 +101,32 @@ swal.fire
   // 7. Resetear estado previo a edicion
   sessionStorage.removeItem('idPelicula');
  } 
+
+
+ export const DescatacarPelicula = (codigo) => {
+  const peliculas = obtenerPeliculas(); // []
+
+  const indexPelicula = peliculas.findIndex((item) => {
+    return item.codigo === codigo;
+  });
+  
+  if (indexPelicula === -1) {
+    console.error("Hubo un error");
+    return;
+  }
+
+  peliculas.forEach((item, index) => {
+    peliculas[index].destacada = false;
+  });
+
+
+  console.log(peliculas[indexPelicula].destacada)
+  peliculas[indexPelicula].destacada = !peliculas[indexPelicula].destacada;
+  console.log(peliculas[indexPelicula].destacada)
+
+  
+  localStorage.setItem("peliculas", JSON.stringify(peliculas));
+
+
+
+};

@@ -1,30 +1,5 @@
-import { obtenerPeliculas } from "../utils.js";
+import { obtenerPeliculas } from "../utils.js"
 
-export const descatacarPelicula = (codigo) => {
-    
-    const peliculas = obtenerPeliculas();
-  
-    
-    const indexPelicula = peliculas.findIndex((item) => {
-      return item.codigo === codigo;
-    });
-  
-    
-    if (indexPelicula === -1) {
-      console.error("La película no se encontró en la lista");
-      return;
-    }
-  
-    
-    peliculas[indexPelicula].destacada = !peliculas[indexPelicula].destacada;
-  
-    
-    localStorage.setItem("peliculas", JSON.stringify(peliculas));
-  
-    
-    console.log("Nuevo estado de destacada:", peliculas[indexPelicula].destacada);
-  };
-  
 
   const peliculas = obtenerPeliculas();
 
@@ -34,11 +9,11 @@ export const descatacarPelicula = (codigo) => {
     const descripcionPelDestacada = document.getElementById('descripcionPelDestacada');
   
     const caratulaPelicula = document.createElement('img');
-    caratulaPelicula.src = pelicula.caratula;
+    caratulaPelicula.src = pelicula.trailer;
     caratulaPelicula.alt = pelicula.titulo;
   
-   
-    
+    // Limpiar contenido anterior antes de agregar uno nuevo
+    caratulaPelDestacada.innerHTML = '';
   
     caratulaPelDestacada.appendChild(caratulaPelicula);
   
@@ -62,4 +37,5 @@ export const descatacarPelicula = (codigo) => {
   // Llama a la función para mostrar la película destacada
   mostrarPeliculaDestacada();
   
+
 

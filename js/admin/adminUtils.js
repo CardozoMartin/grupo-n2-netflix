@@ -1,6 +1,6 @@
-import { descatacarPelicula } from "../peliculaDestacada/app.js";
+
 import { obtenerPeliculas } from "../utils.js";
-import {  eliminarPelicula } from "./abm.js";
+import {  DescatacarPelicula, eliminarPelicula } from "./abm.js";
 
 
 export const guardarPelicula = (pelicula) => {
@@ -70,7 +70,7 @@ btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm');
  eliminarPelicula(pelicula.codigo)
   };
   btnDestacar.onclick = ()=>{
-    descatacarPelicula(pelicula.codigo)
+    DescatacarPelicula(pelicula.codigo)
   }
 
 tdBotones.appendChild(btnEditar)
