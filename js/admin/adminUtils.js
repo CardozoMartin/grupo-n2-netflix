@@ -1,5 +1,6 @@
+import { descatacarPelicula } from "../peliculaDestacada/app.js";
 import { obtenerPeliculas } from "../utils.js";
-import { eliminarPelicula } from "./abm.js";
+import {  eliminarPelicula } from "./abm.js";
 
 
 export const guardarPelicula = (pelicula) => {
@@ -62,12 +63,15 @@ btnEliminar.classList.add('btn', 'btn-danger', 'btn-sm');
   btnDestacar.appendChild(iconoDescatar)
 
   btnEditar.onclick = () => {
-    prepararEdicionContacto(contacto.codigo);
+    EdicionDePelicula(pelicula.codigo);
   };
 
   btnEliminar.onclick = () => {
  eliminarPelicula(pelicula.codigo)
   };
+  btnDestacar.onclick = ()=>{
+    descatacarPelicula(pelicula.codigo)
+  }
 
 tdBotones.appendChild(btnEditar)
 tdBotones.appendChild(btnEliminar)
@@ -88,15 +92,57 @@ export const cargarTabla = () => {
   });
 };
 
+export const filtroBuscarPelicula =() => {
+
 const buscarPelicula = document.getElementById("buscarPelicula")
+const peliculas = obtenerPeliculas()
 
 buscarPelicula.addEventListener("input",() => {
-  const peliculas = obtenerPeliculas()
+  const tbody = document.getElementById("tbodyPeliculas");
   const encontrarPelicula = buscarPelicula.value.toLowerCase();
   const resultado = peliculas.filter((item) => {
-    item.titulo.toLowerCase().includes(encontrarPelicula)
+    return item.titulo.toLowerCase().includes(encontrarPelicula);
   })
-  buscarPelicula.innerHTML = ""
-  resultado.forEach((item) => {cargarTabla(item)})
-})
+  tbody.innerHTML = "";
+  resultado.forEach((item, indice) => {filaDeCatalogoDePeliculas(item, indice)})
+})}
  
+
+export const EdicionDePelicula = (codigo)=>{
+  // 1. Traer lista
+  const peliculas = obtenerPeliculas();
+
+  // 2. Buscar la pelicula a editar
+  const peliculaSeleccionada = peliculas.find(item => item.codigo === codigo);
+
+  // 3. Seleccionar los elementos (campos)
+  const tituloPelicula = document.getElementById("tituloPelicula");
+  const tipoPelicula = document.getElementById("tipoPelicula");
+  const caratulaPelicula = document.getElementById("caratulaPelicula");
+  const generoPelicula = document.getElementById("categoriaPelicula");
+  const descripcionPelicula = document.getElementById("descripcionPelicula");
+
+  // 4. Cargar los datos en el formulario
+
+  tituloPelicula.value = peliculaSeleccionada.titulo;
+  tipoPelicula.value = peliculaSeleccionada.tipo;
+  caratulaPelicula.value = peliculaSeleccionada.caratula;
+  generoPelicula.value = peliculaSeleccionada.genero;
+  descripcionPelicula.value = peliculaSeleccionada.descripcion;
+
+  // 5. Guardar codigo
+  sessionStorage.setItem('idPelicula',codigo);
+
+}
+
+export const PeliculaEditando = ()=>{
+  const codigo = sessionStorage.getItem('idPelicula');
+
+  if(codigo === null){
+    return false;
+  }else {
+    return true;
+  }
+} 
+
+
