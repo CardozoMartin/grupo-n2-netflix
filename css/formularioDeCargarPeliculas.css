@@ -6,3 +6,7 @@
 .btnDestacar i:hover{
     color: #a1a1a1;
 }
+
+body{
+    background: radial-gradient(#2C2F42,#161824);
+}

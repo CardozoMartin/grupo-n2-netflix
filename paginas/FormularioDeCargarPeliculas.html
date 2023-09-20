@@ -33,13 +33,14 @@
     <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link rel="stylesheet" href="../css/formularioDeCargarPeliculas.css">
+    <link rel="stylesheet" href="../css/footer.css">
   </head>
   <body>
     
     <main class="container text-center">
 <h1>Cargar Pelicula</h1>
       <section>
-         <form class="row g-3 needs-validation" novalidate id="formularioDePeliculas">
+         <form class="row g-3 needs-validation text-white" novalidate id="formularioDePeliculas">
         <fieldset class="col-md-4 position-relative">
           <label for="tituloPelicula" class="form-label fw-bolder">Titulo Pelicula</label>
           <input type="text" class="form-control" id="tituloPelicula" placeholder=" Ingrese el titulo de la pelicula" required>
@@ -102,15 +103,14 @@
 
       <section class="container row mt-5">
         <article class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-<table class="table-dark text-dark table-hover">
-              <thead class="text-dark">
+<table class="table-dark table table-hover ">
+              <thead class="text-white">
                   <tr>
                       <th>Id</th>
-                      <th>Titulo</th>
-                      <th>Tipo</th>
                       <th>Caratula</th>
+                      <th>Titulo</th>
                       <th>Categoria</th>
-                      <th>Descripcion</th>
+                      <th>Tipo</th>
                       <th>Acciones</th>
                   </tr>
               </thead>
@@ -120,7 +120,52 @@
           
       </section>
   </main>
-    
+  <footer>
+    <section class="container">
+    <ul class="contenedor__redes">
+      <li class="d-inline">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i
+        ></a>
+      </li>
+      <li class="d-inline">
+        <a href="#"><i class="fa-brands fa-instagram"></i></i
+        ></a>
+      </li>
+      <li class="d-inline">
+        <a href="#"><i class="fa-brands fa-twitter"></i
+        ></a>
+      </li>
+      <li class="d-inline">
+        <a href="#"><i class="fa-brands fa-youtube"></i
+        ></a>
+      </li> </ul>
+      <div class="div__footer">
+    <ul>
+      <li class="li__footer li__footer"><a href="#">Audio descriptivo</li></a>
+      <li class="li__footer li__footer"><a href="#">Relaciones con inversionistas</li></a>
+      <li class="li__footer li__footer"><a href="#">Avisos legales</li></a>
+    </ul>
+    <ul>
+      <li class="li__footer li__footer"><a href="#">Centro de ayuda</li></a>
+      <li class="li__footer li__footer"><a href="#">Empleo</li></a>
+      <li class="li__footer li__footer"><a href="#">Preferencias de cookies</li></a>
+    </ul>
+    <ul>
+      <li class="li__footer li__footer"><a href="#">Tarjeta de regalo</li></a>
+      <li class="li__footer li__footer"><a href="#">Términos de uso</li></a>
+      <li class="li__footer li__footer"><a href="#">Información corporativa</li></a>
+    </ul>
+    <ul>
+      <li class="li__footer li__footer"><a href="#">Prensa</li></a>
+      <li class="li__footer li__footer"><a href="#">Privacidad</li></a>
+      <li class="li__footer li__footer"><a href="#">Contactanos</li></a>
+    </ul>
+  </div>
+  
+    <a class="codigo__servicios ms-4" href="#">Codigo de servicio</a>
+    <p class="mt-4 ms-4">© 1997-2023 Netflix, Inc.</p></section>
+
+  </footer>
     <script type="module" src="../js/admin/app.js"></script>
     
   </body>
