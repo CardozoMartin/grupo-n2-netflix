@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,6 +27,16 @@
     <h1 class="text-white">Cargar Pelicula</h1>
     <section>
       <form class="row g-3 needs-validation text-white" novalidate id="formularioDePeliculas">
+
+    <link rel="stylesheet" href="../css/formularioDeCargarPeliculas.css">
+    <link rel="stylesheet" href="../css/footer.css">
+  </head>
+  <body>
+    
+    <main class="container text-center">
+<h1>Cargar Pelicula</h1>
+      <section>
+         <form class="row g-3 needs-validation text-white" novalidate id="formularioDePeliculas">
         <fieldset class="col-md-4 position-relative">
           <label for="tituloPelicula" class="form-label fw-bolder">Titulo Pelicula</label>
           <input type="text" class="form-control" id="tituloPelicula" placeholder=" Ingrese el titulo de la pelicula"
@@ -95,24 +104,26 @@
       <input class="form-control me-2" id="buscarPelicula" type="search" placeholder="Search" aria-label="Search">
     </section>
 
-    <section class="container row mt-5">
-      <article class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-        <table class="table-dark table text-dark table-hover">
-          <thead class="text-dark">
-            <tr>
-              <th>Id</th>
-              <th>Caratula</th>
-              <th>Titulo</th>
-              <th>Categoria</th>
-              <th>Tipo</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody id="tbodyPeliculas"></tbody>
-        </table>
-      </article>
 
-    </section>
+    <section class="container row mt-5">
+        <article class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+<table class="table-dark table table-hover ">
+              <thead class="text-white">
+                  <tr>
+                      <th>Id</th>
+                      <th>Caratula</th>
+                      <th>Titulo</th>
+                      <th>Categoria</th>
+                      <th>Tipo</th>
+                      <th>Acciones</th>
+                  </tr>
+              </thead>
+              <tbody id="tbodyPeliculas"></tbody>
+          </table>
+        </article>
+          
+      </section>
+  </main>
   </main>
   <!-- JavaScript Librerias-->
 
@@ -126,4 +137,12 @@
 
 </body>
 
+
+      
+
+  
+    <script type="module" src="../js/admin/app.js"></script>
+    
+  </body>
 </html>
+

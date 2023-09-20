@@ -12,6 +12,7 @@ export const guardarPelicula = (pelicula) => {
 export const filaDeCatalogoDePeliculas = (pelicula, indice) => {
   const tbody = document.getElementById("tbodyPeliculas");
   const tr = document.createElement("tr");
+  tr.classList.add('text-white')
 
   const tdIndice = document.createElement("td");
   tdIndice.innerText = indice;
@@ -39,7 +40,6 @@ export const filaDeCatalogoDePeliculas = (pelicula, indice) => {
   tdTipo.innerText = pelicula.tipo;
   tr.appendChild(tdTipo);
 
-  
   const tdBotones = document.createElement('td')
   const btnEditar = document.createElement('button');
   const btnEliminar = document.createElement('button');
