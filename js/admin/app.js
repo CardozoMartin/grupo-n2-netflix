@@ -82,6 +82,9 @@ formularioDePeliculas.addEventListener("submit", (e) => {
   descripcionPelicula.classList.remove('is-valid', 'is-invalid')
   trailerPelicula.classList.remove('is-valid', 'is-invalid')
   
+
 });
 
-buscarPelicula.addEventListener("input",filtroBuscarPelicula)
+
+});
+

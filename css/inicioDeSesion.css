@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Montserrat:wght@700&family=Playfair+Display:wght@900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Montserrat", sans-serif;
+  }
+  
+  body {
+    background-color: hsl(268, 74%, 39%);
+    width: 100%;
+    height: 100vh;
+  }
+  
+  body::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background: linear-gradient(to top, #000000, #0000009d);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
+  }
+  
+  .contenedor {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contenedor .tarjeta {
+    padding: 16px;
+    position: relative;
+    z-index: 4;
+    height: 95%;
+    width: 80%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.274);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+  }
+  
+  .contenedor .tarjeta h1 {
+    text-align: center;
+    color: rgb(241, 248, 248);
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  form .inputGrupo {
+    margin: 0 auto;
+    margin-bottom: 15px;
+    padding: 12px;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    flex-direction: column;
+    color: white;
+  }
+  
+  form .inputGrupo input {
+    border: none;
+    background-color: white;
+    border-radius: 6px;
+    padding: 9px;
+  }
+  
+  form .btnGrupo {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 5px;
+  }
+  
+  form .btnGrupo .btn {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  form .btnGrupo .btnInicio {
+    color: aliceblue;
+    background-color: hsl(268, 74%, 39%);
+  }
+  form .btnGrupo .btnInicio:hover {
+    color: aliceblue;
+    background-color: hsl(268, 84%, 24%);
+  }
+  form .btnGrupo .btnRegistro {
+    background-color: #6e6a60;
+  }
+  
+  form .btnGrupo .sosmed {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    gap: 12px;
+    margin-top: 10px;
+  }
+  form .btnGrupo .sosmed a {
+    text-align: center;
+    color: white;
+    font-size: 23px;
+    position: relative;
+    transition: 0.3s;
+  }
+  
+
+  
+  form .btnGrupo .sosmed a:hover{
+      color: rgb(9, 10, 10);
+      transform: scale(1.2);
+  }
+
+  .fa-github:hover{
+    color: #000;
+  }
+  .fa-google:hover{
+    color: #ec0606;
+  }
+  .fa-facebook:hover{
+    color: #1826f0;
+  }
+  .btnGrupo p{
+    color: #faf5f5;
+  }
+  
+  .btnGrupo a{
+    text-decoration: none;
+    color:rgb(245, 245, 245) ;
+  }
+  .btnGrupo a:hover{
+    color: #5a05ca;
+    
+  }
+
+  .animacionInicio{
+    position: absolute;
+    bottom: 25px;
+  }
+
+@media (max-width:1011px) {
+  .contenedor .tarjeta {
+    height: 85%;
+    width: 75%;
+    
+    
+  }
+}
+@media(max-width:948px){
+  .animacionInicio{
+    display: none;
+  }
+}
+@media (max-width: 576px)  {
+  .contenedor .tarjeta {
+    height: 100%;
+    width: 80%;
+    max-width: 400px;
+    
+  }
+  
+}
+  @media (max-width: 476px)  {
+    .contenedor .tarjeta {
+      height: 95%;
+      width: 80%;
+      max-width: 400px;
+      
+    }
+    
+  }
+ 

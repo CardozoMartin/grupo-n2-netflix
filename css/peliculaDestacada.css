@@ -1,0 +1,147 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  body {
+    background-color: hsl(268, 94%, 6%);
+    background: linear-gradient(to top, #3b0269, #000000f1);
+    width: 100%;
+    height: 100%;
+  }
+  
+  body::after {
+    content: "";
+    position: absolute;
+    display: block;
+    
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
+  }
+
+
+.btn {
+  color: var(--white);
+
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 10px;
+  border: 2px solid hsl(57, 97%, 45%);
+  border-radius: 50px;
+  transition: 0.15s ease;
+}
+
+/**
+ * MOVIE CARD
+ */
+
+.movies-list {
+  display: grid;
+  gap: 50px;
+}
+
+.movie-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-card .card-banner {
+  position: relative;
+  background: hsl(229, 15%, 21%);
+  aspect-ratio: 2 / 3;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: 0.15s ease;
+}
+
+.movie-card .card-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transition: 0.15s ease;
+}
+
+.movie-card .card-banner:hover {
+  box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.5);
+}
+
+.movie-card .card-banner:hover::after {
+  background: hsla(0, 0%, 100%, 0.05);
+}
+
+.movie-card .card-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-card .title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.movie-card .card-title:is(:hover, :focus) {
+  color: hsl(57, 97%, 45%);
+}
+
+
+@media (min-width: 550px) {
+ 
+
+  .container {
+    max-width: 540px;
+    margin-inline: auto;
+  }
+
+  /* MOVIE CARD */
+
+  .movies-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px 30px;
+  }
+
+  @media (min-width: 768px) {
+    
+    .container {
+      max-width: 720px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+
+    /* MOVIE CARD */
+
+    .movies-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    
+    .container {
+      max-width: 1320px;
+    }
+
+    .movies-list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
