@@ -87,3 +87,16 @@ export const cargarTabla = () => {
     filaDeCatalogoDePeliculas(pelicula, indice + 1); 
   });
 };
+
+const buscarPelicula = document.getElementById("buscarPelicula")
+
+buscarPelicula.addEventListener("input",() => {
+  const peliculas = obtenerPeliculas()
+  const encontrarPelicula = buscarPelicula.value.toLowerCase();
+  const resultado = peliculas.filter((item) => {
+    item.titulo.toLowerCase().includes(encontrarPelicula)
+  })
+  buscarPelicula.innerHTML = ""
+  resultado.forEach((item) => {cargarTabla(item)})
+})
+ 
