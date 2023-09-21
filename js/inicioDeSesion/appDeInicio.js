@@ -67,9 +67,9 @@ formLogin.addEventListener('submit', (e) => {
       sessionStorage.setItem('usuario', JSON.stringify(usuarioLogueado));
 
       if (usuarioEncontrado.tipo === 'admin') {
-        window.location.href = './paginaAdministrador.html'; 
+        window.location.href = './paginaAdministrador.html'; // Redirige al administrador
       } else {
-        window.location.href = './paginaPrincipal.html'; 
+        window.location.href = './paginaAdministrador.html'; // Redirige al usuario común
       }
     } else {
       alertCredenciales.classList.remove('d-none');

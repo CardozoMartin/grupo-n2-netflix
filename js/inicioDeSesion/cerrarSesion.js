@@ -2,8 +2,7 @@ const btnLogout = document.getElementById('btn-cerrar');
 
 
 btnLogout.addEventListener('click', () => {
-    swal
-    .fire({
+    swal.fire({
       title: '¿Estás seguro?',
       text: 'Cerrarás tu sesión',
       confirmButtonText: 'Si, salir',
