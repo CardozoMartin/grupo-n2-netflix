@@ -98,9 +98,7 @@ formLogin.addEventListener('submit', (e) => {
     } else {
       
       alertCredenciales.classList.remove('d-none');
-      console.log("no pudo ingresar")
-      console.log(usuario)
-      console.log(contraseña)
+      
     }
   }
 });

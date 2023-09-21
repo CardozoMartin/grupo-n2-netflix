@@ -45,3 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     
   }
+
+  const reproducirPelicula = document.getElementById('reproducirPelicula');
+
+  reproducirPelicula.addEventListener('click',()=>{
+    window.location.href = "./error404.html"
+  })

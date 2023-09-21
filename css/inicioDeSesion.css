@@ -39,7 +39,7 @@
     height: 95%;
     width: 80%;
     max-width: 400px;
-    background-color: rgba(255, 255, 255, 0.274);
+    background-color: rgba(80, 77, 77, 0.486);
     backdrop-filter: blur(4px);
     border-radius: 10px;
   }
@@ -168,7 +168,7 @@
 }
 @media (max-width: 576px)  {
   .contenedor .tarjeta {
-    height: 100%;
+    height: 80%;
     width: 80%;
     max-width: 400px;
     
@@ -177,7 +177,7 @@
 }
   @media (max-width: 476px)  {
     .contenedor .tarjeta {
-      height: 95%;
+      height: 80%;
       width: 80%;
       max-width: 400px;
       
