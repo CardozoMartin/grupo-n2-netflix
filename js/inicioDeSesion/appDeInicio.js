@@ -91,7 +91,7 @@ formLogin.addEventListener('submit', (e) => {
         })
         .then(() => {
           
-          window.location.href = './paginaPrincipal.html';
+          window.location.href = './paginaAdministrador.html';
         });
     } 
     else {
