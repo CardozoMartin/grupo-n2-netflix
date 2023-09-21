@@ -4,8 +4,8 @@ import { Pelicula } from "./pelicula.js";
 
 
 
-export const cargarPeliculas = (titulo,tipo, caratula,genero,descripcion)=>{
-  const nuevaPelicula = new Pelicula(titulo,tipo, caratula,genero,descripcion)
+export const cargarPeliculas = (titulo,tipo, caratula,genero,descripcion,trailer)=>{
+  const nuevaPelicula = new Pelicula(titulo,tipo, caratula,genero,descripcion,trailer)
 
   guardarPelicula(nuevaPelicula);
 }
@@ -49,4 +49,84 @@ export const eliminarPelicula = (codigo)=>{
   })
 }
 
+export const editarUnaPelicula =(titulo,tipo, caratula,genero,descripcion,trailer)=>{
+  // 1. Traer lista de peliculas y el codigo de la pelicula a editar
+  const codigo = sessionStorage.getItem('idPelicula');
+  const peliculas = obtenerPeliculas();
 
+  // # Si no hay codigo (es null)
+  if(!codigo){
+    
+swal.fire
+({
+      title: 'Error',
+      text: 'No se encontró la Pelicula',
+      icon: 'error',
+    });
+    return;
+  }
+  const posicionDeLaPelicula = peliculas.findIndex(
+    (item) => item.codigo === codigo
+  );
+  // 2. Buscar posicion de la pelicula
+
+  if(posicionDeLaPelicula === -1){
+    
+swal.fire
+({
+      title: 'Error',
+      text: 'No se encontró la pelicula',
+      icon: 'error',
+    });
+    return;
+  }
+
+  // 3. Crear el pelicula editado
+  const peliculaEditada = new Pelicula(titulo,tipo, caratula,genero,descripcion,trailer);
+
+  // 4. Eliminar pelicula anterior y agregar el nuevo
+  peliculas.splice(posicionDeLaPelicula,1,peliculaEditada);
+
+  // 5. Guardar en LS
+  localStorage.setItem('peliculas',JSON.stringify(peliculas));
+
+  // 6. Mostrar mensaje de exito
+  
+swal.fire
+({
+    title: 'Exito',
+    text: 'El contacto se modificó correctamente',
+    icon: 'success',
+  });
+  // 7. Resetear estado previo a edicion
+  sessionStorage.removeItem('idPelicula');
+ } 
+
+
+ export const DescatacarPelicula = (codigo) => {
+  const peliculas = obtenerPeliculas(); // []
+
+  const indexPelicula = peliculas.findIndex((item) => {
+    return item.codigo === codigo;
+  });
+  
+  if (indexPelicula === -1) {
+    console.error("Hubo un error");
+    return;
+  }
+
+  peliculas.forEach((item, index) => {
+    peliculas[index].destacada = false;
+  });
+
+
+  console.log(peliculas[indexPelicula].destacada)
+  peliculas[indexPelicula].destacada = !peliculas[indexPelicula].destacada;
+  console.log(peliculas[indexPelicula].destacada)
+
+  
+  localStorage.setItem("peliculas", JSON.stringify(peliculas));
+
+
+
+};
