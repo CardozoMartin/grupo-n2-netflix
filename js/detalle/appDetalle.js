@@ -1,16 +1,21 @@
+
+const estaLogueado = JSON.parse(sessionStorage.getItem('estaLogueado'));
+if (!estaLogueado) {
+  window.location.href = './inicioDeSesion.html';
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-    // Obtener los detalles de la película desde sessionStorage
+   
     const peliculas = sessionStorage.getItem("peliculaSeleccionada");
   
     if (peliculas) {
-      // Parsear los detalles de la película
+      
       const pelicula = JSON.parse(peliculas);
   
-      // Muestra los detalles de la película en la página
-      
+     
       mostrarDetallesDePelicula(pelicula)
     } else {
-      // Si no se encontraron detalles en sessionStorage, muestra un mensaje de error o redirige a otra página de inicio.
+      
       console.log("No se encontraron detalles de película en sessionStorage.");
     }
   });

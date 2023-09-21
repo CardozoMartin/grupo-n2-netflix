@@ -23,17 +23,23 @@
   <!--Css-->
   <link rel="stylesheet" href="../css/formularioDeCargarPeliculas.css">
   <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/navbar.css">
 </head>
 
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body opacity-25" data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Reeflix</a>
-        </div>
-      </div>
+<body c>
+  <header class="header position-sticky top-0 z-3">
+    <div class="logo">
+        <img src="../img/icono/REEFLIX__5_-removebg-preview.png" alt="Logo de la marca">
+    </div>
+    <nav>
+       <ul class="nav-links">
+            <li><a href="./paginaPrincipal.html">Inicio</a></li>
+            <li><a href="./nosotros.html">Nosotros</a></li>
+            <li><a href="./formularioDeContacto.html">Ayuda</a></li>
+       </ul>            
     </nav>
-  </header> 
+    <a class="btn" href="#" id="btn-cerrar"><button>Salir</button></a>
+</header> 
   <main class="container text-center">
     <h1 class="text-white">Cargar Pelicula</h1>
     <section>
@@ -56,7 +62,7 @@
         </fieldset>
         <fieldset class="col-md-4 position-relative">
           <label for="trailerPelicula" class="form-label fw-bolder">Portada</label>
-          <input type="text" class="form-control" id="trailerPelicula" placeholder="Ingresa el trailer" required>
+          <input type="text" class="form-control" id="trailerPelicula" placeholder="Ingresa la portada" required>
           <div class="invalid-tooltip">
             Debes ingresar la Url de la portada!
           </div>
@@ -161,6 +167,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!--JavaScrip-->
+  <script type="module" src="../js/inicioDeSesion/cerrarSesion.js"></script>
   <script type="module" src="../js/admin/app.js"></script>
 
 </body>

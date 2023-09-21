@@ -1,5 +1,8 @@
 import { validarConsulta, validarEmailConsulta } from "./validaciones.js";
-
+const estaLogueado = JSON.parse(sessionStorage.getItem('estaLogueado'));
+if (!estaLogueado) {
+  window.location.href = './inicioDeSesion.html';
+}
 
 const inputEmail = document.getElementById('inputEmail');
 const asuntoSelect = document.getElementById('inputAsunto');

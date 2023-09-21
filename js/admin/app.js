@@ -2,7 +2,10 @@ import { cargarPeliculas, editarUnaPelicula } from "./abm.js";
 import { PeliculaEditando, cargarTabla, filtroBuscarPelicula } from "./adminUtils.js";
 import { validarCaratula, validarDescripcion, validarCategoria, validarTipo, validarTitulo } from "./validacion.js";
 
-
+const estaLogueado = JSON.parse(sessionStorage.getItem('estaLogueado'));
+if (!estaLogueado) {
+  window.location.href = './inicioDeSesion.html';
+}
 cargarTabla();
 
 const tituloPelicula = document.getElementById("tituloPelicula");

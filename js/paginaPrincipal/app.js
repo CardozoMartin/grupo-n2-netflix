@@ -2,7 +2,10 @@
 
 import { obtenerPeliculas } from "../utils.js";
 
-
+const estaLogueado = JSON.parse(sessionStorage.getItem('estaLogueado'));
+if (!estaLogueado) {
+  window.location.href = './inicioDeSesion.html';
+}
 
 const crearTarjetasDeSlider = (pelicula)=>{
   const contenedor = document.getElementById('contenedor')  

@@ -4,15 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Cardozo Martin, Cintia Rivera, Mauricio Zurita, Emir" />
-    <meta name="description" content="index de pelicula" />
-    <meta name="keywords" content="Peliculas, catalogo" />
-    <link rel="shortcut icon" href="../img/icono/REEFLIX__5_-removebg-preview.png" />
-
-
-
-
-    <title>Reflix</title>
+    <title>Admin</title>
 
     <!--Librerias-->
     <link
@@ -35,19 +27,20 @@
 </head>
 
 <body>
-        <header class="header position-sticky top-0 z-3">
-            <div class="logo">
-                <img src="../img/icono/REEFLIX__5_-removebg-preview.png" alt="Logo de la marca">
-            </div>
-            <nav>
-               <ul class="nav-links">
-                    <li><a href="./paginaPrincipal.html">Inicio</a></li>
-                    <li><a href="./nosotros.html">Nosotros</a></li>
-                    <li><a href="./formularioDeContacto.html">Ayuda</a></li>
-               </ul>            
-            </nav>
-            <a class="btn" href="#" id="btn-cerrar"><button>Salir</button></a>
-        </header>
+    <header class="header position-sticky top-0 z-3">
+        <div class="logo">
+            <img src="../img/icono/REEFLIX__5_-removebg-preview.png" alt="Logo de la marca">
+        </div>
+        <nav>
+           <ul class="nav-links">
+                <li><a href="./paginaPrincipal.html">Inicio</a></li>
+                <li><a href="./FormularioDeCargarPeliculas.html">Admin</a></li>
+                <li><a href="./nosotros.html">Nosotros</a></li>
+                <li><a href="./formularioDeContacto.html">Ayuda</a></li>
+           </ul>            
+        </nav>
+        <a class="btn" href="#" id="btn-cerrar"><button>Salir</button></a>
+    </header>
     <main>
         <section id="peliculaDestacada">
             <article>
@@ -85,7 +78,7 @@
             <article class="mx-auto">
                 <form class="form mx-auto">
                     <label for="search">
-                        <input class="input" type="text" required="" placeholder="titulo pelicula" id="buscarPelicula">
+                        <input class="input" type="text" required="" placeholder="Ingrese el titulo" id="buscarPelicula">
                         <div class="fancy-bg"></div>
                         
                        
@@ -142,9 +135,9 @@
       </footer>
 
     <!--JavaScript-->
+    <script type="module" src="../js/inicioDeSesion/cerrarSesion.js"></script>
     <script type="module" src="../js/paginaPrincipal/app.js"></script>
     <script type="module" src="../js/peliculaDestacada/app.js"></script>
-    <script type="module" src="../js/inicioDeSesion/cerrarSesion.js"></script>
 </body>
 
 </html>
