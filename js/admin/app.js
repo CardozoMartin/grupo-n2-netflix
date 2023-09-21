@@ -1,4 +1,4 @@
-import { cargarPeliculas, editarUnaPelicula } from "./abm.js";
+import { cargarPeliculas, editarUnaPelicula  } from "./abm.js";
 import { PeliculaEditando, cargarTabla, filtroBuscarPelicula } from "./adminUtils.js";
 import { validarCaratula, validarDescripcion, validarCategoria, validarTipo, validarTitulo } from "./validacion.js";
 
@@ -66,6 +66,7 @@ formularioDePeliculas.addEventListener("submit", (e) => {
     validarDescripcion(descripcion, descripcionPelicula)&&
     validarCaratula(trailer,trailerPelicula)
   ) {
+    
     if(PeliculaEditando()){
       editarUnaPelicula(titulo,tipo,caratula,genero,descripcion,trailer);
     }else{
