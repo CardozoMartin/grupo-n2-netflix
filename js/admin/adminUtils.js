@@ -30,6 +30,9 @@ export const filaDeCatalogoDePeliculas = (pelicula, indice) => {
 
   const tdTitulo = document.createElement("td");
   tdTitulo.innerText = pelicula.titulo;
+  if(pelicula.destacada){
+    tr.classList.add('bg-warning', 'text-white');
+  }
   tr.appendChild(tdTitulo);
 
   const tdGenero = document.createElement("td");
